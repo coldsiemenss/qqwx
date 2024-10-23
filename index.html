@@ -3,52 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мини-приложение Telegram</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Наша команда ботов для Discord</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Привет, Telegram!</h1>
-    <p id="username">Загрузка данных пользователя...</p>
-    <button id="mainButton">Нажми меня!</button>
+    <!-- Видео для фона -->
+    <video autoplay muted loop playsinline id="background-video">
+        <source src="MAH06135.MP4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
 
-    <script>
-        // Инициализация Telegram Web Apps API
-        Telegram.WebApp.ready();
-
-        // Получаем данные о пользователе
-        const user = Telegram.WebApp.initDataUnsafe.user;
-        document.getElementById('username').innerText = `Привет, ${user.first_name}!`;
-
-        // Изменяем кнопку и добавляем обработчик нажатия
-        const mainButton = document.getElementById('mainButton');
-        mainButton.addEventListener('click', () => {
-            alert('Кнопка нажата! Спасибо, что используешь мини-приложение!');
-        });
-
-        // Показываем главную кнопку Telegram
-        Telegram.WebApp.MainButton.setText('Закрыть приложение');
-        Telegram.WebApp.MainButton.show();
-        Telegram.WebApp.MainButton.onClick(() => {
-            Telegram.WebApp.close();
-        });
-    </script>
+    <header class="bg">
+        <h1>Наша команда xxqw</h1>
+    </header>
+    <main class="nft">
+        <section id="about" class="main">
+            <h2>О нас</h2>
+            <p class="description">Наша команда опытных разработчиков специализируется на создании уникальных ботов для Discord. Мы стремимся предоставить нашим пользователям инновационные и полезные инструменты для улучшения их игрового опыта.</p>
+        </section>
+        <hr>
+        <section id="bot" class="main">
+            <h2>Наш бот</h2>
+            <p class="description">Наш бот предлагает широкий спектр функций, включая:</p>
+            <del>
+                <li>Автоматизация задач(soon)</li>
+                <li>Управление сообществом(soon)</li>
+                <li>Интерактивные команды(soon)</li>
+            </del>
+            <a href="https://discord.com/oauth2/authorize?client_id=1296514843112636457&permissions=8&integration_type=0&scope=bot" class="add-bot-button">Добавить бота</a>
+        </section>
+        <hr>
+        <section id="contact" class="main">
+            <h2>Контакты</h2>
+            <p class="description">Свяжитесь с нами по адресу:</p>
+            <ul>
+                <li>Email: qqwxve@gmail.com</li>
+                <li>Discord: qqwwwe</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="nft">
+        &copy; 2024 xxqw
+    </footer>
 </body>
 </html>
