@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мини-приложение Telegram</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Привет, Telegram!</h1>
+    <p id="username">Загрузка данных пользователя...</p>
+    <button id="mainButton">Нажми меня!</button>
+
+    <script>
+        // Инициализация Telegram Web Apps API
+        Telegram.WebApp.ready();
+
+        // Получаем данные о пользователе
+        const user = Telegram.WebApp.initDataUnsafe.user;
+        document.getElementById('username').innerText = `Привет, ${user.first_name}!`;
+
+        // Изменяем кнопку и добавляем обработчик нажатия
+        const mainButton = document.getElementById('mainButton');
+        mainButton.addEventListener('click', () => {
+            alert('Кнопка нажата! Спасибо, что используешь мини-приложение!');
+        });
+
+        // Показываем главную кнопку Telegram
+        Telegram.WebApp.MainButton.setText('Закрыть приложение');
+        Telegram.WebApp.MainButton.show();
+        Telegram.WebApp.MainButton.onClick(() => {
+            Telegram.WebApp.close();
+        });
+    </script>
+</body>
+</html>
